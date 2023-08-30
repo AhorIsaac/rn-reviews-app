@@ -6,6 +6,13 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: "#fff",
     padding: 20,
   },
+  headerText: {
+    fontSize: 24,
+    fontFamily: "nunito-bold",
+    color: "teal",
+    textAlign: "center",
+    marginVertical: 12,
+  },
   titleText: {
     fontFamily: "nunito-bold",
     fontSize: 18,
