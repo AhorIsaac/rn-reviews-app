@@ -5,6 +5,8 @@ import * as SplashScreen from "expo-splash-screen";
 import { Home } from "./screens";
 import { View, StyleSheet } from "react-native";
 
+import HomeStack from "./routes/homeStack";
+
 SplashScreen.preventAutoHideAsync();
 
 const App = () => {
@@ -25,13 +27,13 @@ const App = () => {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <Home />
+      <HomeStack />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {flex: 1},
+  container: { flex: 1 },
 });
 
 export default App;
