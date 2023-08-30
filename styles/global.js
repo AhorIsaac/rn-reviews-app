@@ -9,7 +9,7 @@ export const globalStyles = StyleSheet.create({
   headerText: {
     fontSize: 24,
     fontFamily: "nunito-bold",
-    color: "teal",
+    color: "#17a",
     textAlign: "center",
     marginVertical: 12,
   },
