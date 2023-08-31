@@ -9,8 +9,16 @@ const AppDrawer = () => {
   return (
     <NavigationContainer>
       <Drawer.Navigator screenOptions={{ headerShown: false }}>
-        <Drawer.Screen name="HomeStack" component={HomeStack} />
-        <Drawer.Screen name="AboutStack" component={AboutStack} />
+        <Drawer.Screen
+          name="HomeStack"
+          component={HomeStack}
+          options={{ title: "Home" }}
+        />
+        <Drawer.Screen
+          name="AboutStack"
+          component={AboutStack}
+          options={{ title: "About" }}
+        />
       </Drawer.Navigator>
     </NavigationContainer>
   );

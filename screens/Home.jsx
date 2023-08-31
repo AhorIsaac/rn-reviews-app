@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, Text, View, TouchableOpacity, FlatList } from "react-native";
 import { globalStyles } from "../styles/global";
+import Card from "../shared/card";
 
 const Home = ({ navigation }) => {
   const dataArray = [
@@ -13,7 +14,7 @@ const Home = ({ navigation }) => {
     {
       title: "Mastering React Framework",
       body: "In-depth guide to building modern web applications with React.",
-      rating: 4.5,
+      rating: 3.5,
       key: "react_master",
     },
     {
@@ -25,13 +26,13 @@ const Home = ({ navigation }) => {
     {
       title: "Healthy Cooking Recipes",
       body: "Explore a collection of nutritious and delicious recipes.",
-      rating: 4.2,
+      rating: 3.2,
       key: "healthy_recipes",
     },
     {
       title: "Traveling on a Budget",
       body: "Tips and tricks for traveling the world without breaking the bank.",
-      rating: 4.0,
+      rating: 2.0,
       key: "budget_travel",
     },
   ];
@@ -44,8 +45,12 @@ const Home = ({ navigation }) => {
       <FlatList
         data={reviews}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => navigation.navigate("Details", item)}>
-            <Text style={globalStyles.titleText}>{item.title}</Text>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Details", item)}
+          >
+            <Card>
+              <Text style={globalStyles.titleText}>{item.title}</Text>
+            </Card>
           </TouchableOpacity>
         )}
       />
