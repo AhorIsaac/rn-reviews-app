@@ -1,7 +1,8 @@
-import * as React from "react";
+import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { Home, ReviewDetails } from "../screens";
+import Header from "../shared/header";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +22,9 @@ const HomeStack = () => {
       <Stack.Screen
         name="Home"
         component={Home}
-        options={{ title: "Overview 🏠" }}
+        options={( { navigation } ) => {
+          return { headerTitle: () => <Header navigation={navigation} title="Revuece 🔯" /> };
+        }}
       />
       <Stack.Screen
         name="Details"
