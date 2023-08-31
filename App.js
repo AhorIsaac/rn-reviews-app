@@ -2,10 +2,9 @@ import React, { useCallback, useState } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 
-import { Home } from "./screens";
 import { View, StyleSheet } from "react-native";
 
-import HomeStack from "./routes/homeStack";
+import Navigator from "./routes/drawer";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -27,7 +26,7 @@ const App = () => {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <HomeStack />
+      <Navigator />
     </View>
   );
 };

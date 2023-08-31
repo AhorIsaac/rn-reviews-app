@@ -1,11 +1,11 @@
 import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { Home, ReviewDetails } from "../screens";
+import { About } from "../screens";
 
 const Stack = createNativeStackNavigator();
 
-const HomeStack = () => {
+const AboutStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -19,17 +19,12 @@ const HomeStack = () => {
       }}
     >
       <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{ title: "Overview 🏠" }}
-      />
-      <Stack.Screen
-        name="Details"
-        component={ReviewDetails}
-        options={{ title: "Review Details" }}
+        name="About"
+        component={About}
+        options={{ title: "About 📔" }}
       />
     </Stack.Navigator>
   );
 };
 
-export default HomeStack;
+export default AboutStack;
