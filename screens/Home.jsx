@@ -1,5 +1,14 @@
 import { useState } from "react";
-import { Button, Text, View, TouchableOpacity, FlatList } from "react-native";
+import {
+  Button,
+  Text,
+  View,
+  TouchableOpacity,
+  FlatList,
+  Modal,
+  StyleSheet,
+} from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 import { globalStyles } from "../styles/global";
 import Card from "../shared/card";
 
@@ -38,9 +47,33 @@ const Home = ({ navigation }) => {
   ];
 
   const [reviews, setReviews] = useState(dataArray);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <View style={globalStyles.container}>
+      {/* modal */}
+      <Modal visible={openModal} animationType="slide">
+        <View style={styles.modalContent}>
+          {/* modal toggle : close */}
+          <MaterialIcons
+            name="close"
+            size={24}
+            onPress={() => setOpenModal(false)}
+            style={{ ...styles.modalToggle, ...styles.modalClose }}
+          />
+
+          <Text>Hello from modal 😃</Text>
+        </View>
+      </Modal>
+      {/* end of modal */}
+
+      <MaterialIcons
+        name="add"
+        size={24}
+        onPress={() => setOpenModal(true)}
+        style={styles.modalToggle}
+      />
+
       <Text style={globalStyles.headerText}>All Reviews</Text>
       <FlatList
         data={reviews}
@@ -57,5 +90,25 @@ const Home = ({ navigation }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  modalToggle: {
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: "#333",
+    padding: 10,
+    borderRadius: 10,
+    alignSelf: "center",
+    backgroundColor: "#17a",
+    color: "#f8f9fa",
+  },
+  modalClose: {
+    marginTop: 20,
+    marginBottom: 0,
+  },
+  modalContent: {
+    flex: 1,
+  },
+});
 
 export default Home;
