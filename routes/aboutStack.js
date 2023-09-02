@@ -10,9 +10,7 @@ const AboutStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: {
-          backgroundColor: "#f8f9ff",
-        },
+        headerStyle: {},
         headerTintColor: "#17a",
         headerTitleStyle: {
           fontWeight: "bold",
@@ -23,7 +21,11 @@ const AboutStack = () => {
         name="About"
         component={About}
         options={({ navigation }) => {
-          return { headerTitle: () => <Header navigation={navigation} title="About Revuece 🔯" /> };
+          return {
+            headerTitle: () => (
+              <Header navigation={navigation} title="About Revuece 🔯" />
+            ),
+          };
         }}
       />
     </Stack.Navigator>

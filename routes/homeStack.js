@@ -10,9 +10,7 @@ const HomeStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: {
-          backgroundColor: "#f8f9ff",
-        },
+        headerStyle: {},
         headerTintColor: "#17a",
         headerTitleStyle: {
           fontWeight: "bold",
@@ -22,8 +20,12 @@ const HomeStack = () => {
       <Stack.Screen
         name="Home"
         component={Home}
-        options={( { navigation } ) => {
-          return { headerTitle: () => <Header navigation={navigation} title="Revuece 🔯" /> };
+        options={({ navigation }) => {
+          return {
+            headerTitle: () => (
+              <Header navigation={navigation} title="Revuece 🔯" />
+            ),
+          };
         }}
       />
       <Stack.Screen
