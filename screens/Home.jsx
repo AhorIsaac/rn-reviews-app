@@ -11,6 +11,7 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import { globalStyles } from "../styles/global";
 import Card from "../shared/card";
+import ReviewForm from "./ReviewForm";
 
 const Home = ({ navigation }) => {
   const dataArray = [
@@ -62,7 +63,7 @@ const Home = ({ navigation }) => {
             style={{ ...styles.modalToggle, ...styles.modalClose }}
           />
 
-          <Text>Hello from modal 😃</Text>
+          <ReviewForm />
         </View>
       </Modal>
       {/* end of modal */}
