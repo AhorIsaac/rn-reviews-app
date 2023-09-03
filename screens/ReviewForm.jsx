@@ -26,7 +26,14 @@ const ReviewForm = ({ addReview }) => {
           addReview(values);
         }}
       >
-        {({ handleChange, handleBlur, handleSubmit, values }) => (
+        {({
+          handleChange,
+          handleBlur,
+          handleSubmit,
+          values,
+          errors,
+          touched,
+        }) => (
           <View>
             {/* title input */}
             <TextInput
@@ -34,7 +41,12 @@ const ReviewForm = ({ addReview }) => {
               placeholder="Add review title"
               onChangeText={handleChange("title")}
               value={values.title}
+              onBlur={handleBlur("title")}
             />
+            <Text style={globalStyles.errorText}>
+              {" "}
+              {touched.title && errors.title}{" "}
+            </Text>
 
             {/* body input */}
             <TextInput
@@ -43,7 +55,12 @@ const ReviewForm = ({ addReview }) => {
               placeholder="Add review body"
               onChangeText={handleChange("body")}
               value={values.body}
+              onBlur={handleBlur("body")}
             />
+            <Text style={globalStyles.errorText}>
+              {" "}
+              {touched.body && errors.body}{" "}
+            </Text>
 
             {/* rating input */}
             <TextInput
@@ -52,7 +69,12 @@ const ReviewForm = ({ addReview }) => {
               onChangeText={handleChange("rating")}
               value={values.rating}
               keyboardType="phone-pad"
+              onBlur={handleBlur("rating")}
             />
+            <Text style={globalStyles.errorText}>
+              {" "}
+              {touched.rating && errors.rating}{" "}
+            </Text>
 
             {/* submit button */}
             <Button onPress={handleSubmit} title="submit" color="#17a" />
